@@ -1,0 +1,67 @@
+{
+	"id": "sync-page-router",
+	"name": "uni-app 项目页面路由增强",
+	"description": "增强 pages.json 的写法 ，可以将页面路由拆分到具体页面",
+	"displayName": "uni-app 项目页面路由增强",
+	"version": "0.0.1",
+	"publisher": "mehaotian",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension",
+	"activationEvents": [
+		"onCommand:extension.pageRouter",
+		"onCommand:extension.pageSubpackage",
+		"onCommand:extension.pageJson",
+		"onCommand:extension.buildJson"
+	],
+	"contributes": {
+		"commands": [{
+			"command": "extension.pageRouter",
+			"title": "插件--初始化项目路由"
+		},
+		{
+			"command": "extension.pageSubpackage",
+			"title": "插件--生成分包文件"
+		},
+		{
+			"command": "extension.pageJson",
+			"title": "插件--生成页面配置文件"
+		},
+		{
+			"command": "extension.buildJson",
+			"title": "插件--生成完整pages.json"
+		}],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.pageRouter",
+					"group": "new",
+					"when": "explorerResourceIsWorkspaceFolder&&workspaceFolder.type == 'UniApp_Vue'"
+				},{
+					"command": "extension.buildJson",
+					"group": "new",
+					"when": "explorerResourceIsWorkspaceFolder&&workspaceFolder.type == 'UniApp_Vue'"
+				},{
+					"command": "extension.pageSubpackage",
+					"group": "new",
+					"when": "explorerResourceIsFolder&&workspaceFolderRelativePath=~ /^pages/"
+				},{
+					"command": "extension.pageJson",
+					"group": "new",
+					"when": "!explorerResourceIsFolder&&workspaceFolderRelativePath=~ /pages/&&workspaceFolderRelativePath=~ /.(vue|nvue)/"
+				},
+				{
+					"group": "new"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"dependencies": {}
+}
