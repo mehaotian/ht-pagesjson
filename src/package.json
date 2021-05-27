@@ -1,8 +1,8 @@
 {
-	"id": "sync-page-router",
-	"name": "uni-app 项目页面路由增强",
+	"id": "ht-pagesjson",
+	"name": "uni-app项目注册页面分离",
 	"description": "增强 pages.json 的写法 ，可以将页面路由拆分到具体页面",
-	"displayName": "uni-app 项目页面路由增强",
+	"displayName": "uni-app项目注册页面分离",
 	"version": "0.0.1",
 	"publisher": "mehaotian",
 	"engines": {
